@@ -17,7 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   LifeExpectancies.init({
-    countryId: DataTypes.INTEGER,
+    countryName: DataTypes.STRING,
+    countryCode: DataTypes.STRING,
+    maxAge: DataTypes.DOUBLE,
     expectancy: DataTypes.ARRAY
   }, {
     sequelize,

@@ -1,18 +1,23 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('LifeExpectancies', {
+    await queryInterface.createTable('Countries', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      countryId: {
-        type: Sequelize.INTEGER
+      name: {
+        type: Sequelize.STRING
       },
-      expectancy: {
-        type: Sequelize.ARRAY
+      code: {
+        type: Sequelize.STRING
+      },
+      maxAge: {
+        type: Sequelize.DOUBLE
+      },
+      minAge: {
+        type: Sequelize.DOUBLE
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('LifeExpectancies');
+    await queryInterface.dropTable('Countries');
   }
 };

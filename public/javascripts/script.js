@@ -43,6 +43,31 @@ function showChart(valueId, value2, minAge) {
    
 }
 
+async function uploadFile() {
+
+    if (document.getElementById('myFile').value !== '') {
+        let formData = new FormData();
+        formData.append("myFile", myFile.files[0]);
+        console.log('Files=== ', myFile.files[0])
+        alert('File attached');
+        var element = document.getElementById('load');
+        element.classList.add('loader');
+        // document.getElementById('sendEmailBtn').disabled = false;
+        await fetch('/api/validate', {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            alert('document uploaded successfully')
+            element.classList.remove('loader');
+            console.log(response.json)
+            // fetch('/')
+            window.location.href = "/";
+        });
+    } else {
+        alert('ATTACH FILE!!! ');
+    }
+}
+
 $(document).ready(function () {
     $('#dataTable').DataTable();
 

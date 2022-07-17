@@ -4,6 +4,7 @@ import dataController from '../controllers/dataController.js';
 
 const router = express.Router();
 
+router.post('/api/validate',dataController.validateForm);
 router.use('/api/uploadData',dataController.loadData);
 router.use('/api/clearData',dataController.clearData);
 router.use('/api/:country',dataController.getCountryData);

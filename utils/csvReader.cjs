@@ -6,7 +6,7 @@ let filePath = path.join(__dirname, "../Big Data Test1.csv");
 
 const wb = new Excel.Workbook();
 
- const readFile = async (filePath) => {
+ const readCsvFile = async (filePath) => {
     // wb.csv.readFile(filePath).then(worksheet => {
     const countryData = []
     const worksheet = await wb.csv.readFile(filePath);
@@ -44,7 +44,7 @@ const getDataFromCsvFile = async () => {
     return countryData;
 }
 
-module.exports = { getDataFromCsvFile  }
+module.exports = { getDataFromCsvFile, readCsvFile  }
 
 
 

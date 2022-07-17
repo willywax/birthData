@@ -1,0 +1,69 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .m-bottom{
+    margin-bottom: 20px;
+  }
+  
+  .m-right{
+    margin-right: 20px;
+  }
+  
+  .m-top{
+    margin-top: 20px;
+  }
+  
+  #container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  #instructions{
+    width: 50%;
+    padding-top: 10px;
+  
+  }
+  
+  #main {
+    width: 50%;
+    padding-top: 10px;
+    z-index: 1;
+  }
+  
+  #wrapper {
+    position: relative;
+  }
+
+  #chartContainer {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border: black 2px solid;
+  }
+  
+  #tableContainer {
+    font-size: 10px;
+    width: 90%;
+    overflow-x: scroll;
+  }
+  
+  button {
+    font-size: 5px;
+  }

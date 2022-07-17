@@ -1,0 +1,9 @@
+#exampleModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+  .modal-dialog(role="document")
+    .modal-content
+        .modal-header
+            h5.modal-title Life Expectancy Graph
+            button.close(data-bs-dismiss="modal" aria-label="Close")
+                span(aria-hidden="true") &times;
+        .modal-body
+            canvas#myChart  

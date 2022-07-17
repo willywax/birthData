@@ -6,6 +6,13 @@ import DataService from '../services/dataService.js';
 class DataController {
 
 
+    async getIndexPage (req,res,next) {
+        const title = 'Life Expectancy Data';
+        const countryData = await DataService.getData({});
+
+        return res.render('index', { title, countryData })
+    }
+
     async loadData (req,res,next) {
         try {
             const result = [];

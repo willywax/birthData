@@ -1,4 +1,4 @@
-### Instalation instructions 
+### Installation instructions 
 - copy .env.example to .env file and update the variables 
 - run `npm install` to install dependecies 
 - run `npm run migrate` to run migrations to the database 

@@ -6,7 +6,7 @@ let filePath = path.join(__dirname, "../Big Data Test1.csv");
 
 const wb = new Excel.Workbook();
 
- const readFile = async (filePath) => {
+ const readCsvFile = async (filePath) => {
     // wb.csv.readFile(filePath).then(worksheet => {
     const countryData = []
     const worksheet = await wb.csv.readFile(filePath);
@@ -24,7 +24,7 @@ const wb = new Excel.Workbook();
                 minAge: 1000, // 1000 assuming no age is greater than 1000
                 maxAge: 0
             }
-            for (let j = 4; j < col.actualCellCount; j++) {
+            for (let j = 4; j <= col.actualCellCount; j++) {
                 const val = col.getCell(j).value;
                 if (val < data.minAge) data.minAge = val;
                 if (val > data.maxAge) data.maxAge = val;
@@ -44,7 +44,7 @@ const getDataFromCsvFile = async () => {
     return countryData;
 }
 
-module.exports = { getDataFromCsvFile  }
+module.exports = { getDataFromCsvFile, readCsvFile  }
 
 
 

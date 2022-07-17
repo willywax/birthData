@@ -1,4 +1,31 @@
 extends layout 
-
 block content
-    h1 Hellow World!
+    #wrapper
+        #container 
+            h3 Life Expectancy Data from 1990 - 2020 
+            
+            p Click on the "Choose File" button to upload a file:
+            form(method="POST" action="/uploadFile")
+                input(type="file" id="myFile" name="filename").m-bottom
+                button.btn.btn-primary.btn-sm(type="button" id="validateBtn" onclick='uploadFile()') Upload File
+  
+    include modal
+    #tableContainer
+        table#dataTable.table.table-bordered(style="width:100%")
+            thead 
+                tr
+                    th(scope) Country
+                    th(scope) Country Code
+                    th(scope) Chart
+                    - for (var i=1990 ; i <2021; i++)
+                        th(scope)=i
+            tbody 
+                - for (var i=0; i<countryData.length; i++)
+                    tr
+                        td(scope="row")=countryData[i].countryName
+                        td(scope="row")=countryData[i].countryCode
+                        td(scope="row")
+                            button.btn.btn-primary.btn-sm(type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick='showChart("#{countryData[i].expectancy}","#{countryData[i].countryName}")') Show
+                        - for (var j=0; j<31; j++)
+                            td(scope="row")=countryData[i].expectancy[j]
+    #load

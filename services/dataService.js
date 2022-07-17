@@ -29,7 +29,7 @@ class DataService {
         }
     }
 
-    async clearData(req,res,next) {
+    async clearData(params) {
         try {
             const result = await LifeExpectancies.destroy({
                 where: {},

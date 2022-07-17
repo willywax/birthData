@@ -1,7 +1,7 @@
 ### Installation instructions 
 - copy .env.example to .env file and update the variables 
 - run `npm install` to install dependecies 
-- run `npm run migrate` to run migrations to the database 
+- run `npm run migrate:dev` to run migrations to the database 
 - run `npm run start:dev` to start server 
 - open the browser with the port `http:\\localhost:[PORT]` to access the page 
 
